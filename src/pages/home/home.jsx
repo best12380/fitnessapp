@@ -11,7 +11,7 @@ function Home() {
   return (
     <>
       <div>
-        <a onClick={() => navigate("/detail")}>
+        <a onClick={() => navigate("/dashboard")}>
           <img src={viteLogo} className="logo" alt="Vite logo" />
         </a>
         <a onClick={() => navigate("/dashboard")}>

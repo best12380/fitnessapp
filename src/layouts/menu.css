@@ -162,3 +162,63 @@ td {
   color: orange;
   font-weight: bold;
 }
+.sidebar {
+  width: 260px;
+  background: #ffffff;
+  border-right: 1px solid #e5e7eb;
+  padding: 20px 14px;
+  display: flex;
+  flex-direction: column;
+}
+
+.logo {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 24px;
+}
+
+.menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.menu.bottom {
+  margin-top: auto;
+}
+
+.menu-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 14px;
+  margin-bottom: 6px;
+  border-radius: 10px;
+  color: #64748b;
+  text-decoration: none;
+  font-size: 14px;
+  transition: all 0.2s ease;
+  position: relative;
+}
+
+.menu-item:hover {
+  background: #f1f5f9;
+  color: #0f172a;
+}
+
+.menu-item.active {
+  background: #eef6ff;
+  color: #2563eb;
+  font-weight: 600;
+}
+
+.menu-item.active::before {
+  content: "";
+  position: absolute;
+  left: -14px;
+  top: 8px;
+  height: calc(100% - 16px);
+  width: 4px;
+  background: #2563eb;
+  border-radius: 4px;
+}
