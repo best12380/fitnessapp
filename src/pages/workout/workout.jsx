@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './Workout.css';
 
-const WorkoutManager = () => {
+const workoutManager = () => {
   const [exercises, setExercises] = useState([
     { id: 'A', name: 'Incline Bench Press', sets: '6, 7', weight: '25, 22.5 kg' },
     { id: 'B', name: 'Fly', sets: '8, 5', weight: '50 kg' },
@@ -92,4 +92,4 @@ const WorkoutManager = () => {
   );
 };
 
-export default WorkoutManager;
+export default workoutManager;
