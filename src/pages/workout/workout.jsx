@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './Workout.css';
+import './workout.css';
 
 const workoutManager = () => {
   const [exercises, setExercises] = useState([
