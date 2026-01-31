@@ -2,54 +2,44 @@ import "./menu.css";
 import { NavLink, Outlet } from "react-router-dom";
 import {
   LayoutDashboard,
-  ShoppingCart,
+  BookPlus,
   Boxes,
-  Truck,
-  Users,
-  BarChart3,
-  Settings,
+  User,
 } from "lucide-react";
 
 const menus = [
   { name: "Dashboard", path: "/dashboard", icon: LayoutDashboard },
-  { name: "Orders", path: "/orders", icon: ShoppingCart },
+  { name: "workout", path: "/workout", icon: BookPlus },
   { name: "Inventory", path: "/inventories", icon: Boxes },
-  { name: "Deliveries", path: "/deliveries", icon: Truck },
-  { name: "Customers", path: "/customers", icon: Users },
-  { name: "Reports", path: "/reports", icon: BarChart3 },
-  { name: "Settings", path: "/settings", icon: Settings },
+  { name: "Profile", path: "/profile", icon: User },
 ];
 
 export default function Menu() {
   return (
-    <div className="app">
-      <aside className="sidebar">
-        <h2 className="logo">StockMage</h2>
-
-        <ul className="menu">
-          {menus.map(({ name, path, icon: Icon }) => (
-            <li key={name}>
-              <NavLink
-                to={path}
-                className={({ isActive }) =>
-                  `menu-item ${isActive ? "active" : ""}`
-                }
-              >
-                <Icon size={18} />
-                <span>{name}</span>
-              </NavLink>
-            </li>
+    <div className="app-container">
+      <header className="navbar">
+        <div className="days-indicator">
+          {['Sun', 'Mon', 'Tue', 'Wed', 'Thu','Fri','Sat'].map((day) => (
+            <div key={day} className={`day-tag ${day === 'Thu' ? 'current' : ''}`}>
+              {day}
+            </div>
           ))}
-        </ul>
-      </aside>
+        </div>
 
-      <main className="main">
-        <header className="header">
-          <input placeholder="Search something here..." />
-          <div className="profile">Pas Vejchanchai</div>
-        </header>
+        <nav className="glass-menu">
+          {menus.map(({ name, path, icon: Icon }) => (
+            <NavLink
+              key={name}
+              to={path}
+              className={({ isActive }) => `nav-link ${isActive ? "active" : ""}`}
+            >
+              <Icon size={35} />
+            </NavLink>
+          ))}
+        </nav>
+      </header>
 
-        {/* 🔥 เปลี่ยนเฉพาะตรงนี้ */}
+      <main className="content-area">
         <Outlet />
       </main>
     </div>
